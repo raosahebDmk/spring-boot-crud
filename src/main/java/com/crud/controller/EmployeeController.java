@@ -1,9 +1,12 @@
 package com.crud.controller;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.dao.Employee;
@@ -15,18 +18,19 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@GetMapping("/get")
-	public Employee getEmployeeData()
+	@GetMapping(value = "/get/{id}")
+	public Employee getEmployeeData(@PathVariable int id)
 	{	
-		Employee emp = employeeService.getEmployee();
+		Employee emp = employeeService.getEmployee(id);
 		System.out.println(emp);
 		return emp;
 	}
 	
-	@GetMapping("/save")
-	public String saveEmployee()
+	@PostMapping(value = "/save")  
+	public String saveEmployee(@RequestBody Employee employee)
 	{
-		employeeService.saveEmployee();
+		Employee e = employeeService.saveEmployee(employee);
+		System.out.println("employee save "+e);
 		return "save data ...";
 	}
 	

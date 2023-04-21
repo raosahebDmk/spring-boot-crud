@@ -12,18 +12,15 @@ public class EmployeeService {
 	@Autowired
 	EmployeeRepo employeeRepo;
 	
-	public Employee getEmployee()
+	public Employee getEmployee(int id)
 	{	
-		Employee emp = employeeRepo.findById(1);
+		Employee emp = employeeRepo.findById(id);
 		return emp;
 	}
 	
-	public void saveEmployee()
+	public Employee saveEmployee(Employee employee)
 	{
-		Employee e = new Employee(3, "Jay", 40000, "Pune");
-		
-		Employee emp = employeeRepo.save(e);
-		System.out.println(emp);
+		return employeeRepo.save(employee);
 	}
 	
 }
