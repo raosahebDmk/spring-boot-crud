@@ -23,4 +23,11 @@ public class EmployeeController {
 		return emp;
 	}
 	
+	@GetMapping("/save")
+	public String saveEmployee()
+	{
+		employeeService.saveEmployee();
+		return "save data ...";
+	}
+	
 }

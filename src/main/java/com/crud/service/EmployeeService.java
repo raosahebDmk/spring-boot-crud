@@ -18,4 +18,12 @@ public class EmployeeService {
 		return emp;
 	}
 	
+	public void saveEmployee()
+	{
+		Employee e = new Employee(3, "Jay", 40000, "Pune");
+		
+		Employee emp = employeeRepo.save(e);
+		System.out.println(emp);
+	}
+	
 }
