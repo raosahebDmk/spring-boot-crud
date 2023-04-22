@@ -22,5 +22,11 @@ public class EmployeeService {
 	{
 		return employeeRepo.save(employee);
 	}
+
+	public String updateEmployee(Employee employee)
+	{
+		employeeRepo.save(employee);
+		return "update data..";
+	}
 	
 }

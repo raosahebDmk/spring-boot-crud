@@ -7,5 +7,5 @@ import com.crud.dao.Employee;
 public interface EmployeeRepo extends CrudRepository<Employee, Integer>{
 
 	public Employee findById(int id);
-	
+
 }
