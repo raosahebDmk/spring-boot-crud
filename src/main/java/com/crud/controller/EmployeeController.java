@@ -1,5 +1,7 @@
 package com.crud.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +48,12 @@ public class EmployeeController {
 	{		
 		String resp = employeeService.deleteEmployee(id);
 		return resp;
+	}
+	
+	@GetMapping(value = "/get")
+	public List<Employee> geAlltEmployee()
+	{	
+		return employeeService.getAllEmployee();
 	}
 	
 }

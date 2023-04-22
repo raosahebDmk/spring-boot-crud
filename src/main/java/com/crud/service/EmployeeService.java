@@ -1,5 +1,7 @@
 package com.crud.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,13 @@ public class EmployeeService {
 	{
 		employeeRepo.deleteById(id);
 		return "delete data...";
+	}
+	
+	public List<Employee> getAllEmployee()
+	{	
+		List<Employee> empList = (List<Employee>) employeeRepo.findAll();
+		System.out.println("empList : "+empList);
+		return empList;
 	}
 	
 }
