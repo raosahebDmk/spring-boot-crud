@@ -34,11 +34,10 @@ public class EmployeeController {
 	}
 	
 	@PutMapping(value = "/update")
-	public void updateEmployee(@RequestBody Employee employee)
+	public String updateEmployee(@RequestBody Employee employee)
 	{
-		System.out.println("req: "+employee);
-		employeeService.updateEmployee(employee);
-		
+		Employee e = employeeService.saveEmployee(employee);
+		return "update data...";
 	}
 	
 }

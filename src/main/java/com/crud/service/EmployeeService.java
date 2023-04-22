@@ -18,15 +18,10 @@ public class EmployeeService {
 		return emp;
 	}
 	
+	// save and update both will work
 	public Employee saveEmployee(Employee employee)
 	{
 		return employeeRepo.save(employee);
-	}
-
-	public String updateEmployee(Employee employee)
-	{
-		employeeRepo.save(employee);
-		return "update data..";
 	}
 	
 }
