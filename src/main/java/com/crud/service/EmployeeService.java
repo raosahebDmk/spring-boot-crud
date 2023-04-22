@@ -24,4 +24,10 @@ public class EmployeeService {
 		return employeeRepo.save(employee);
 	}
 	
+	public String deleteEmployee(int id)
+	{
+		employeeRepo.deleteById(id);
+		return "delete data...";
+	}
+	
 }
